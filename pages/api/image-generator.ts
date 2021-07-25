@@ -82,6 +82,20 @@ const getHTML = ({ user, avatar, text }) => `
         line-height: 112px;
         text-align: center;
       }
+
+      .hashtag {
+        position: fixed;
+        bottom: 16px;
+        left: 16px;
+        font-size: 24px;
+      }
+
+      .site {
+        position: fixed;
+        bottom: 16px;
+        right: 16px;
+        font-size: 24px;
+      }
     </style>
   </head>
   <body>
@@ -95,6 +109,8 @@ const getHTML = ({ user, avatar, text }) => `
     <main>
       <strong>${text}</strong>
     </main>
+    <span class="hashtag">#FuiCancelado</span>
+    <span class="site">https://fui-cancelado.vercel.app</span>
   </body>
 </html>
 
