@@ -5,13 +5,9 @@ export default function Home() {
 
       <div>
         <img
-          src="/api/image-generator?titlte=Hello World"
+          src="/api/image-generator?user=ezrealblindado&avatar=https://pbs.twimg.com/profile_images/1399458086503464967/bOD-QW2K_400x400.png&text=participar do banho dos campeões"
           alt="Imagem gereada"
         />
-
-        <a href="/api/image-generator?titlte=Hello World">
-          /api/image-generator?titlte=Hello World
-        </a>
       </div>
     </div>
   );
