@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useAuth } from "../../hooks/useAuth";
-import { cancelList } from "./cancelList";
+import { cancelList } from "../../services/cancelList";
 
 export default function Cancelar() {
   const { user } = useAuth();
