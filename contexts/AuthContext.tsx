@@ -41,7 +41,7 @@ export function AuthContextProvider(props: AuthContextProviderProps) {
     return () => {
       unsubscribe();
     };
-  }, [user]);
+  }, []);
 
   async function signInWithTwitter() {
     const provider = new firebase.auth.TwitterAuthProvider();
