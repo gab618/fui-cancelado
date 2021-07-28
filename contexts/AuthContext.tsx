@@ -33,7 +33,7 @@ export function AuthContextProvider(props: AuthContextProviderProps) {
         setUser({
           id: uid,
           name: displayName,
-          avatar: photoURL,
+          avatar: photoURL.replace("normal", "400x400"),
         });
       }
     });
@@ -49,8 +49,6 @@ export function AuthContextProvider(props: AuthContextProviderProps) {
     const result = await auth.signInWithPopup(provider);
 
     if (result) {
-      console.log(result.user);
-
       const { displayName, photoURL, uid } = result.user;
 
       if (!displayName || !photoURL) {

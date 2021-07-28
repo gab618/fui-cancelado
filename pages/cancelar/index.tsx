@@ -1,14 +1,28 @@
+import { useEffect, useState } from "react";
+import { useAuth } from "../../hooks/useAuth";
+import { cancelList } from "./cancelList";
+
 export default function Cancelar() {
+  const { user } = useAuth();
+  const [imgSrc, setImgSrc] = useState("");
+  const cancelPhrase =
+    cancelList[Math.floor(Math.random() * cancelList.length)];
+
+  useEffect(() => {
+    setImgSrc(
+      `/api/image-generator?user=${user.name}&avatar=${user.avatar}&text=${cancelPhrase}`
+    );
+  }, []);
+
   return (
     <div>
       <h1>Gerador de Cancelamento Alpha</h1>
 
-      <div>
-        <img
-          src="/api/image-generator?user=ezrealblindado&avatar=https://pbs.twimg.com/profile_images/1399458086503464967/bOD-QW2K_400x400.png&text=participar do banho dos campeões"
-          alt="Imagem gereada"
-        />
-      </div>
+      {imgSrc && (
+        <div>
+          <img src={imgSrc} alt="Imagem gereada" />
+        </div>
+      )}
     </div>
   );
 }
