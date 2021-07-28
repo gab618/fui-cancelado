@@ -1,5 +1,6 @@
 import { createGlobalStyle, ThemeProvider } from "styled-components";
-import "../services/firebase";
+
+import { AuthContextProvider } from "../contexts/AuthContext";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -19,9 +20,9 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <GlobalStyle />
-      <ThemeProvider theme={theme}>
+      <AuthContextProvider>
         <Component {...pageProps} />
-      </ThemeProvider>
+      </AuthContextProvider>
     </>
   );
 }
