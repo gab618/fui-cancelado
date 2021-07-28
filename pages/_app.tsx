@@ -1,4 +1,6 @@
-import { createGlobalStyle, ThemeProvider } from 'styled-components'
+import { createGlobalStyle, ThemeProvider } from "styled-components";
+
+import { AuthContextProvider } from "../contexts/AuthContext";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -6,21 +8,21 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
-`
+`;
 
 const theme = {
   colors: {
-    primary: '#0070f3',
+    primary: "#0070f3",
   },
-}
+};
 
 export default function App({ Component, pageProps }) {
   return (
     <>
       <GlobalStyle />
-      <ThemeProvider theme={theme}>
+      <AuthContextProvider>
         <Component {...pageProps} />
-      </ThemeProvider>
+      </AuthContextProvider>
     </>
-  )
+  );
 }
