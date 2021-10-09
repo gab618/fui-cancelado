@@ -42,7 +42,18 @@ const getHTML = ({ user, avatar, text }) => `
             height: 272px;
             width: 272px;
             border-radius: 50%;
-            border: 16px solid #303030;
+          }
+
+          .X {
+            content: "X";
+            position: absolute;
+            color: red;
+            font-size: 272px;
+            left: 25%;
+            top: -10%;
+            opacity: 55%;
+            font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+              sans-serif;
           }
 
           .user-box {
@@ -52,6 +63,14 @@ const getHTML = ({ user, avatar, text }) => `
             align-items: center;
             width: 100%;
             height: 100%;
+          }
+
+          .user-box__image {
+            height: 272px;
+            width: 272px;
+            border-radius: 50%;
+            border: 16px solid #303030;
+            position: relative;
           }
 
           .user-box__title {
@@ -103,7 +122,10 @@ const getHTML = ({ user, avatar, text }) => `
       </head>
       <body>
         <header>
-          <img src="${avatar}" />
+          <div class="user-box__image">
+            <span class="X">X</span>
+            <img src="${avatar}" />
+          </div>
           <div class="user-box">
             <strong class="user-box__title">${user}</strong>
             <p class="user-box__subtitle">foi cancelado por...</p>
