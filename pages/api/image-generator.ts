@@ -143,6 +143,8 @@ const getHTML = ({ user, avatar, text }) => `
 `;
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
+  console.log("AAAA", req.query.avatar);
+
   const isHTMLDebugMode = false;
   const html = getHTML({
     user: req.query.user || "Alguma coisa deu errado",

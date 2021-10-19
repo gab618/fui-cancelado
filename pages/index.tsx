@@ -1,5 +1,6 @@
-import { useAuth } from "../hooks/useAuth";
 import { useRouter } from "next/router";
+import Main from "../components/Main";
+import { useAuth } from "../hooks/useAuth";
 
 export default function Home() {
   const { user, signInWithTwitter } = useAuth();
@@ -9,13 +10,9 @@ export default function Home() {
     if (!user) {
       await signInWithTwitter();
     }
+    console.log("oi");
+
     router.push("cancelar");
   }
-
-  return (
-    <div>
-      <h1>login</h1>
-      <button onClick={handleLogin}>Login com Twitter</button>
-    </div>
-  );
+  return <Main handleLogin={handleLogin} />;
 }
